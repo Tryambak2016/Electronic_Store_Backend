@@ -51,5 +51,5 @@ ElectroStore is a robust e-commerce platform tailored for electronic goods, buil
 ### Steps
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/electrostore.git
+   git clone https://github.com/Tryambak2016/electrostore.git
    cd electrostore
