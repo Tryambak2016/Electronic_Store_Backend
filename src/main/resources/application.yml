@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: Electronic Store
+
+    # database configurations
+  datasource:
+    url: jdbc:postgresql://localhost:5432/electronic_store
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  #Security configurations
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:3030/realms/electronic-store
+          jwk-set-uri: http://localhost:3030/realms/electronic-store/protocol/openid-connect/certs
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+jwt:
+  auth:
+    converter:
+      resource-id: angular-app
+
+server:
+  port: 9090
+
+application:
+  file:
+    uploads:
+      media-output-path: ./uploads
